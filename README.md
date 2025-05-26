@@ -33,9 +33,6 @@ You can load it directly using scikit-learn or seaborn.
 
 📋 Steps Followed
 1. Import Libraries & Load Dataset
-python
-Copy
-Edit
 from sklearn.datasets import load_iris
 import pandas as pd
 import numpy as np
@@ -46,30 +43,18 @@ iris = load_iris()
 df = pd.DataFrame(iris.data, columns=iris.feature_names)
 df['species'] = iris.target
 2. Explore the Data
-python
-Copy
-Edit
 print(df.head())
 print(df.info())
 print(df.describe())
 3. Check for Missing Values
-python
-Copy
-Edit
 print(df.isnull().sum())
 5. Standardize the Features
-python
-Copy
-Edit
 from sklearn.preprocessing import StandardScaler
 
 scaler = StandardScaler()
 features = df.columns[:-1]  # All except 'species'
 df[features] = scaler.fit_transform(df[features])
 6. Visualize and Remove Outliers (Optional)
-python
-Copy
-Edit
 sns.boxplot(data=df[features])
 plt.title("Boxplots of Features (Standardized)")
 plt.xticks(rotation=45)
