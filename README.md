@@ -57,15 +57,6 @@ python
 Copy
 Edit
 print(df.isnull().sum())
-# Iris dataset usually has no missing values
-4. Encode Target Labels (Optional)
-python
-Copy
-Edit
-# If 'species' is numeric already, skip this step
-# If you have categorical labels, use label encoding or get_dummies
-# from sklearn.preprocessing import LabelEncoder
-# df['species'] = LabelEncoder().fit_transform(df['species'])
 5. Standardize the Features
 python
 Copy
@@ -83,8 +74,6 @@ sns.boxplot(data=df[features])
 plt.title("Boxplots of Features (Standardized)")
 plt.xticks(rotation=45)
 plt.show()
-
-# Remove outliers using IQR
 for col in features:
     Q1 = df[col].quantile(0.25)
     Q3 = df[col].quantile(0.75)
